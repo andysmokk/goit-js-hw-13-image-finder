@@ -1,1 +1,0 @@
-{"version":3,"sources":["sass/main.scss"],"names":[],"mappings":"AAAA,KACE,cAAA,CACA","file":"main.3f6f1601.css","sourceRoot":"../src","sourcesContent":["body {\n  font-size: 12px;\n  color: red;\n}\n"]}
