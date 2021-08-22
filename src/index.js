@@ -22,39 +22,27 @@ const refs = getRefs();
 
 const imgApiService = new ImgApiService();
 
-refs.searchForm.addEventListener('submit', onSerchImg);
+refs.searchForm.addEventListener('submit', onSearchImg);
 refs.btnMore.addEventListener('click', onBtnMore);
 
-function onBtnMore(e) {
-  imgApiService.fetchImg();
-}
-
-function onSerchImg(e) {
+function onSearchImg(e) {
   e.preventDefault();
 
-  //   const form = e.currentTarget;
-  //   const searchQuery = form.elements.query.value;
-
-  //   imgApiService
-  //     .fetchImg(searchQuery)
-  //     .then(renderGalleryCard)
-  //     .catch(error => console.log(error))
-  //     .finally(() => form.reset());
+  clearImgsGallery();
 
   imgApiService.query = e.currentTarget.elements.query.value;
-  imgApiService.fetchImg();
+  imgApiService.resetPage();
+  imgApiService.fetchImg().then(renderGalleryCard);
 }
 
-// const BASE_URL = 'https://pixabay.com/api/';
-// const KEY = '23025169-5a1370e5bf826cff1ac1e8732';
-
-// function fetchImgByName(searchImg) {
-//   return fetch(
-//     `${BASE_URL}?image_type=photo&orientation=horizontal&q=${searchImg}&page=2&per_page=12&key=${KEY}`,
-//   ).then(response => response.json());
-// }
+function onBtnMore() {
+  imgApiService.fetchImg().then(renderGalleryCard);
+}
 
 function renderGalleryCard(nameImg) {
-  const markupCardImg = galleryImgTpl(nameImg.hits);
-  refs.gallery.innerHTML = markupCardImg;
+  refs.gallery.insertAdjacentHTML('beforeend', galleryImgTpl(nameImg));
+}
+
+function clearImgsGallery() {
+  refs.gallery.innerHTML = '';
 }
