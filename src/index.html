@@ -15,13 +15,21 @@
   </head>
   <body>
     <form class="search-form" id="search-form">
-      <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
+      <input
+        class="input-img"
+        type="text"
+        name="query"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
       <button class="search-button">Найти</button>
     </form>
 
     <ul class="gallery"></ul>
 
-    <button type="button" class="btn-more" data-actiion="load-more">Показать еще</button>
+    <button type="button" class="btn-more" data-actiion="load-more" id="load-more">
+      Показать еще
+    </button>
 
     <script src="./index.js"></script>
   </body>

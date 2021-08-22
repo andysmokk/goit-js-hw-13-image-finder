@@ -15,15 +15,19 @@ function getRefs() {
     searchForm: document.querySelector('#search-form'),
     gallery: document.querySelector('.gallery'),
     btnMore: document.querySelector('[data-actiion="load-more"]'),
+    searchBtn: document.querySelector('.search-button'),
   };
 }
 
 const refs = getRefs();
 
+console.log(refs.btnMore);
+
 const imgApiService = new ImgApiService();
 
 refs.searchForm.addEventListener('submit', onSearchImg);
 refs.btnMore.addEventListener('click', onBtnMore);
+refs.btnMore.addEventListener('click', onBtnClickScroll);
 
 function onSearchImg(e) {
   e.preventDefault();
@@ -45,4 +49,13 @@ function renderGalleryCard(nameImg) {
 
 function clearImgsGallery() {
   refs.gallery.innerHTML = '';
+}
+
+function onBtnClickScroll() {
+  setTimeout(() => {
+    refs.btnMore.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+    });
+  }, 800);
 }

@@ -1,0 +1,141 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  display: block;
+
+  object-fit: cover;
+
+  width: 305px;
+  height: 250px;
+}
+
+button {
+  cursor: pointer;
+}
+
+label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+body {
+  width: 100%;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin: 0;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-bottom: -20px;
+}
+
+.photo-card {
+  flex-basis: calc((100% - 20px * 4) / 4);
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  color: #ffffff;
+  background-color: #2196f3;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  font-family: inherit;
+
+  padding: 10px 32px;
+  border: 0;
+  border-radius: 4px;
+}
+
+.btn-more {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.search-button {
+  margin-left: 20px;
+}
+
+.input-img {
+  width: 250px;
+  height: 37px;
+}
+
+button:hover,
+button:focus {
+  color: fff;
+  background-color: rgb(4, 0, 255);
+  box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.1), 0px 4px 5px rgba(0, 0, 0, 0.08),
+    0px 5px 5px rgba(0, 0, 0, 0.12);
+}
+
+.search-form {
+  margin: 30px;
+  text-align: center;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+}
+
+.material-icons {
+  margin-right: 5px;
+}
