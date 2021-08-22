@@ -21,8 +21,6 @@ function getRefs() {
 
 const refs = getRefs();
 
-console.log(refs.btnMore);
-
 const imgApiService = new ImgApiService();
 
 refs.searchForm.addEventListener('submit', onSearchImg);
