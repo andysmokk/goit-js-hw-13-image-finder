@@ -8,37 +8,60 @@
 
 import galleryImgTpl from './templates/gallery-img.hbs';
 import ImgApiService from './js/apiService';
+import BtnMore from './js/btnMore';
 
 function getRefs() {
   return {
-    body: document.querySelector('body'),
     searchForm: document.querySelector('#search-form'),
     gallery: document.querySelector('.gallery'),
-    btnMore: document.querySelector('[data-actiion="load-more"]'),
-    searchBtn: document.querySelector('.search-button'),
+    searchBtn: document.querySelector('[data-actiion="search-btn"]'),
   };
 }
 
 const refs = getRefs();
 
+const btnMore = new BtnMore({
+  selector: '[data-actiion="load-more"]',
+  hidden: true,
+});
+
 const imgApiService = new ImgApiService();
 
 refs.searchForm.addEventListener('submit', onSearchImg);
-refs.btnMore.addEventListener('click', onBtnMore);
-refs.btnMore.addEventListener('click', onBtnClickScroll);
+refs.searchBtn.addEventListener('submit', onBtnClickScroll);
+btnMore.refs.button.addEventListener('click', onBtnMore);
+btnMore.refs.button.addEventListener('click', onBtnClickScroll);
 
 function onSearchImg(e) {
   e.preventDefault();
 
   clearImgsGallery();
 
-  imgApiService.query = e.currentTarget.elements.query.value;
+  btnMore.show();
   imgApiService.resetPage();
-  imgApiService.fetchImg().then(renderGalleryCard);
+  btnMore.disable();
+
+  imgApiService.query = e.currentTarget.elements.query.value;
+
+  btnMore.disable();
+  imgApiService
+    .fetchImg()
+    .then(imgs => {
+      renderGalleryCard(imgs);
+      btnMore.enable();
+    })
+    .catch(error => console.log(error));
 }
 
 function onBtnMore() {
-  imgApiService.fetchImg().then(renderGalleryCard);
+  btnMore.disable();
+  imgApiService
+    .fetchImg()
+    .then(imgs => {
+      renderGalleryCard(imgs);
+      btnMore.enable();
+    })
+    .catch(error => console.log(error));
 }
 
 function renderGalleryCard(nameImg) {
@@ -51,9 +74,14 @@ function clearImgsGallery() {
 
 function onBtnClickScroll() {
   setTimeout(() => {
-    refs.btnMore.scrollIntoView({
+    btnMore.refs.button.scrollIntoView({
       behavior: 'smooth',
-      block: 'end',
+      block: 'start',
     });
   }, 800);
+}
+
+function onFetchError() {
+  const markupError = `<h1>Enter the correct country name</h1>`;
+  refs.cardContainer.innerHTML = markupError;
 }

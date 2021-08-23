@@ -14,7 +14,7 @@
     />
   </head>
   <body>
-    <form class="search-form" id="search-form">
+    <form class="search-form" id="search-form" data-actiion="search-btn">
       <input
         class="input-img"
         type="text"
@@ -22,13 +22,14 @@
         autocomplete="off"
         placeholder="Search images..."
       />
-      <button class="search-button">Найти</button>
+      <button class="search-button button">Найти</button>
     </form>
 
     <ul class="gallery"></ul>
 
-    <button type="button" class="btn-more" data-actiion="load-more" id="load-more">
-      Показать еще
+    <button type="button" class="btn-more button" data-actiion="load-more" id="load-more">
+      <span class="is-hidden" role="status" data-actiion="load-more"></span>
+      <span class="label">Показать еще</span>
     </button>
 
     <script src="./index.js"></script>

@@ -97,6 +97,14 @@ button {
   border-radius: 4px;
 }
 
+.button.is-hidden {
+  display: none;
+}
+
+// .button > .spinner.is-hidden {
+//   display: none;
+// }
+
 .btn-more {
   display: block;
   margin-left: auto;
