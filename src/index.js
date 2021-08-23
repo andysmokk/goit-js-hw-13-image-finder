@@ -18,6 +18,7 @@ refs.searchForm.addEventListener('submit', onSearchImg);
 refs.searchBtn.addEventListener('submit', onBtnClickScroll);
 btnMore.refs.button.addEventListener('click', fetchImgs);
 btnMore.refs.button.addEventListener('click', onBtnClickScroll);
+refs.gallery.addEventListener('click', onModalImg);
 
 function onSearchImg(e) {
   e.preventDefault();
@@ -37,11 +38,17 @@ function onSearchImg(e) {
 
 function fetchImgs() {
   btnMore.disable();
+
   imgApiService
     .fetchImg()
     .then(imgs => {
       renderGalleryCard(imgs);
       btnMore.enable();
+
+      if (imgs.length === 0) {
+        onFetchError();
+        btnMore.hide();
+      }
     })
     .catch(error => console.log(error));
 }
@@ -54,8 +61,6 @@ function onBtnClickScroll() {
     });
   }, 700);
 }
-
-refs.gallery.addEventListener('click', onModalImg);
 
 function onModalImg(e) {
   const modalImg = e.target.dataset.source;

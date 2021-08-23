@@ -3,6 +3,7 @@ import '@pnotify/core/dist/BrightTheme.css';
 
 export default function onFetchError() {
   error({
-    text: 'Введите хоть что-нибудь!',
+    text: 'Ничего не найдено. Введите новый запрос!',
+    delay: 2000,
   });
 }
