@@ -4,6 +4,7 @@ import getRefs from './js/getRefs';
 import onFetchError from './js/onFetchError';
 import { renderGalleryCard, clearImgsGallery } from './js/renderGallery';
 import * as basicLightbox from 'basiclightbox';
+import * as scroll from './js/skrollUp';
 
 const refs = getRefs();
 
