@@ -3,12 +3,12 @@ import BtnMore from './js/btnMore';
 import getRefs from './js/getRefs';
 import onFetchError from './js/onFetchError';
 import { renderGalleryCard, clearImgsGallery } from './js/renderGallery';
-import * as basicLightbox from 'basiclightbox';
+import onModalImg from './js/modalImg';
 import * as scroll from './js/skrollUp';
 
 const refs = getRefs();
 
-export const btnMore = new BtnMore({
+const btnMore = new BtnMore({
   selector: '[data-actiion="load-more"]',
   hidden: true,
 });
@@ -61,15 +61,4 @@ function onBtnClickScroll() {
       block: 'start',
     });
   }, 700);
-}
-
-function onModalImg(e) {
-  const modalImg = e.target.dataset.source;
-  const currentImg = e.target.nodeName;
-
-  if (currentImg === 'IMG') {
-    const instance = basicLightbox.create(`<img src="${modalImg}">
-`);
-    instance.show();
-  }
 }
