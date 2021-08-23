@@ -16,9 +16,9 @@ const btnMore = new BtnMore({
 const imgApiService = new ImgApiService();
 
 refs.searchForm.addEventListener('submit', onSearchImg);
-refs.searchBtn.addEventListener('submit', onBtnClickScroll);
+refs.searchBtn.addEventListener('submit', onBtnClickScrollMore);
 btnMore.refs.button.addEventListener('click', fetchImgs);
-btnMore.refs.button.addEventListener('click', onBtnClickScroll);
+btnMore.refs.button.addEventListener('click', onBtnClickScrollMore);
 refs.gallery.addEventListener('click', onModalImg);
 
 function onSearchImg(e) {
@@ -54,7 +54,7 @@ function fetchImgs() {
     .catch(error => console.log(error));
 }
 
-function onBtnClickScroll() {
+function onBtnClickScrollMore() {
   setTimeout(() => {
     btnMore.refs.button.scrollIntoView({
       behavior: 'smooth',
