@@ -26,6 +26,9 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "material-design-icons-updated": "^7.0.0"
+    "@pnotify/core": "^5.2.0",
+    "basiclightbox": "^5.0.4",
+    "material-design-icons-updated": "^7.0.0",
+    "pnotify": "^5.2.0"
   }
 }

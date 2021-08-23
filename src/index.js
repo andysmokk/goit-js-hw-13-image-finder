@@ -3,6 +3,7 @@ import BtnMore from './js/btnMore';
 import getRefs from './js/getRefs';
 import onFetchError from './js/onFetchError';
 import { renderGalleryCard, clearImgsGallery } from './js/renderGallery';
+import * as basicLightbox from 'basiclightbox';
 
 const refs = getRefs();
 
@@ -52,4 +53,17 @@ function onBtnClickScroll() {
       block: 'start',
     });
   }, 700);
+}
+
+refs.gallery.addEventListener('click', onModalImg);
+
+function onModalImg(e) {
+  const modalImg = e.target.dataset.source;
+  const currentImg = e.target.nodeName;
+
+  if (currentImg === 'IMG') {
+    const instance = basicLightbox.create(`<img src="${modalImg}">
+`);
+    instance.show();
+  }
 }
