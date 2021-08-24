@@ -49,7 +49,7 @@ async function fetchGalleryImg() {
       onFetchError();
       btnMore.hide();
     }
-  } catch {
+  } catch (error) {
     console.log(error);
   }
 }
