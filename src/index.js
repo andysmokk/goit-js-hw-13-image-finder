@@ -17,7 +17,7 @@ const imgApiService = new ImgApiService();
 
 refs.searchForm.addEventListener('submit', onSearchImg);
 refs.searchBtn.addEventListener('submit', onBtnClickScrollMore);
-btnMore.refs.button.addEventListener('click', fetchImgs);
+btnMore.refs.button.addEventListener('click', fetchGalleryImg);
 btnMore.refs.button.addEventListener('click', onBtnClickScrollMore);
 refs.gallery.addEventListener('click', onModalImg);
 
@@ -34,24 +34,24 @@ function onSearchImg(e) {
   imgApiService.resetPage();
   clearImgsGallery();
 
-  fetchImgs();
+  fetchGalleryImg();
 }
 
-function fetchImgs() {
-  btnMore.disable();
+async function fetchGalleryImg() {
+  try {
+    btnMore.disable();
 
-  imgApiService
-    .fetchImg()
-    .then(imgs => {
-      renderGalleryCard(imgs);
-      btnMore.enable();
+    const galleryImg = await imgApiService.fetchImg();
+    renderGalleryCard(galleryImg);
+    btnMore.enable();
 
-      if (imgs.length === 0) {
-        onFetchError();
-        btnMore.hide();
-      }
-    })
-    .catch(error => console.log(error));
+    if (galleryImg.length === 0) {
+      onFetchError();
+      btnMore.hide();
+    }
+  } catch {
+    console.log(error);
+  }
 }
 
 function onBtnClickScrollMore() {
