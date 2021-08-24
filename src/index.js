@@ -40,7 +40,6 @@ function onSearchImg(e) {
 async function fetchGalleryImg() {
   try {
     btnMore.disable();
-
     const galleryImg = await imgApiService.fetchImg();
     renderGalleryCard(galleryImg);
     btnMore.enable();
