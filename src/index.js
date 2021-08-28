@@ -22,8 +22,6 @@ btnMore.refs.button.addEventListener('click', onBtnClickScrollMore);
 refs.gallery.addEventListener('click', onModalImg);
 
 function onSearchImg(e) {
-  e.preventDefault();
-
   imgApiService.query = e.currentTarget.elements.query.value;
 
   if (imgApiService.query === '') {
