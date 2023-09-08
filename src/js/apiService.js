@@ -13,6 +13,7 @@ export default class ApiService {
     );
     const dataResponse = await response.json();
     const imgs = await dataResponse.hits;
+    console.log('🚀 ~ file: apiService.js:16 ~ ApiService ~ fetchImg ~ imgs:', imgs);
     this.incrementPage();
     return imgs;
   }
