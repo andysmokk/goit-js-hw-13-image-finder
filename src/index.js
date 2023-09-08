@@ -4,12 +4,12 @@ import getRefs from './js/getRefs';
 import onFetchError from './js/onFetchError';
 import { renderGalleryCard, clearImgsGallery } from './js/renderGallery';
 import onModalImg from './js/modalImg';
-import * as scroll from './js/skrollUp';
+import { scroll } from './js/skrollUp';
 
 const refs = getRefs();
 
 const btnMore = new BtnMore({
-  selector: '[data-actiion="load-more"]',
+  selector: '[data-action="load-more"]',
   hidden: true,
 });
 

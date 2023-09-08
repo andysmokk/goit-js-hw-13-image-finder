@@ -19,6 +19,7 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "devDependencies": {
+    "@babel/plugin-transform-export-namespace-from": "^7.22.11",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",
@@ -27,8 +28,8 @@
   },
   "dependencies": {
     "@pnotify/core": "^5.2.0",
+    "@pnotify/mobile": "^5.2.0",
     "basiclightbox": "^5.0.4",
-    "material-design-icons-updated": "^7.0.0",
-    "pnotify": "^5.2.0"
+    "material-design-icons-updated": "^7.0.0"
   }
 }
