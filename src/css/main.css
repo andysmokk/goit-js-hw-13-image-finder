@@ -105,10 +105,6 @@ button {
   display: none;
 }
 
-// .button > .spinner.is-hidden {
-//   display: none;
-// }
-
 .btn-more {
   display: block;
   margin-left: auto;
@@ -160,7 +156,6 @@ button:active {
   margin-right: 5px;
 }
 
-// кнопка вверх
 
 #button {
   display: inline-block;
@@ -177,6 +172,7 @@ button:active {
   visibility: hidden;
   z-index: 1000;
 }
+
 #button::after {
   content: '\f077';
   font-family: FontAwesome;
@@ -186,13 +182,16 @@ button:active {
   line-height: 50px;
   color: #fff;
 }
+
 #button:hover {
   cursor: pointer;
   background-color: rgb(4, 0, 255);
 }
+
 #button:active {
   background-color: rgb(4, 0, 255);
 }
+
 #button.show {
   opacity: 1;
   visibility: visible;
@@ -202,6 +201,7 @@ button:active {
   .content {
     width: 43%;
   }
+
   #button {
     margin: 30px;
   }

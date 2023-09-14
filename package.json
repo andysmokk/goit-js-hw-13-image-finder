@@ -20,16 +20,21 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-export-namespace-from": "^7.22.11",
+    "@types/basiclightbox": "^5.0.1",
+    "@types/handlebars": "^4.1.0",
+    "@types/jquery": "^3.5.18",
     "parcel-bundler": "^1.12.5",
-    "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",
     "posthtml-include": "^1.6.2",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@pnotify/core": "^5.2.0",
     "@pnotify/mobile": "^5.2.0",
     "basiclightbox": "^5.0.4",
-    "material-design-icons-updated": "^7.0.0"
+    "material-design-icons-updated": "^7.0.0",
+    "simplelightbox": "^2.14.2"
   }
 }

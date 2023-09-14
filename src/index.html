@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Заголовок страницы</title>
-    <link rel="stylesheet" href="./sass/main.scss" />
+    <title>Search App JS</title>
+    <link rel="stylesheet" href="./css/main.css" />
 
     <link
       rel="stylesheet"
@@ -38,19 +38,26 @@
         autocomplete="off"
         placeholder="Search images..."
       />
-      <button class="search-button button">Найти</button>
+      <button class="search-button button">Search</button>
     </form>
 
     <ul class="gallery"></ul>
 
     <button type="button" class="btn-more button" data-action="load-more" id="load-more">
       <span class="is-hidden" role="status" data-action="load-more"></span>
-      <span class="label">Показать еще</span>
+      <span class="label">Show more</span>
     </button>
 
     <a id="button"></a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"
+      integrity="sha512-/4kQE5RJQYHRhUiK+CZS8UhaJTnLmQkDuf8lOhiP2xLdjthA/rm0VqqWjcyelIx+NDyNHFmtqvuIgOFQnI34WA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../src/js/skrollUp.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
